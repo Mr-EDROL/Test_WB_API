@@ -10,7 +10,7 @@ GOOGLE_CREDENTIALS_FILE=.\secret\###.json
 ```
 
 3. Run
-```pip install -r requirenments.txt```
+```pip install -r requirements.txt```
 
 ### To start
 Run
