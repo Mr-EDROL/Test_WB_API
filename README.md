@@ -1,6 +1,6 @@
 ### Before start:
 
-1. Copy .json of your Google service account to folder ```.\secret```
+1. Copy .json of your Google service account to folder ```.\secret\```
 
 2. Create file
 ```.env```
