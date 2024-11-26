@@ -10,8 +10,12 @@ GOOGLE_CREDENTIALS_FILE=.\secret\###.json
 ```
 
 3. Run
-```pip install -r requirements.txt```
+```
+pip install -r requirements.txt
+```
 
 ### To start
 Run
-```python3 -m WB_API.py```
+```
+python3 -m WB_API.py
+```
