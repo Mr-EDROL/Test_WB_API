@@ -3,7 +3,7 @@
 1. Copy .json of your Google service account to folder ```.\secret```
 
 2. Create file
-.env
+```.env```
 ```
 WB_API_TOKEN=############################
 GOOGLE_CREDENTIALS_FILE=.\secret\###.json
