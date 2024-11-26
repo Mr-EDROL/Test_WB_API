@@ -1,4 +1,4 @@
-###Before start:
+### Before start:
 
 Copy .json of your Google service account to folder ```.\secret```
 
