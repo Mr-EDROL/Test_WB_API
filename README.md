@@ -19,3 +19,5 @@ Run
 ```
 python3 -m WB_API.py
 ```
+
+The table will be saved in Google Sheet under the name ```WB products```
