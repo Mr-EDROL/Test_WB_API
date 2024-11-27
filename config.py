@@ -10,4 +10,3 @@ WB_API_TOKEN: str = os.getenv('WB_API_TOKEN')
 # Переменные для Google Sheets
 credentials_file: str = os.getenv('GOOGLE_CREDENTIALS_FILE')
 spreadsheet_name: str = 'WB products'
-

@@ -13,7 +13,6 @@ class WildberriesAPI:
     def get_products(self,offset: int = 0, limit: int = 100) -> List[Dict[str, Any]]:
         '''
         Делает запрос к API Wildberries и возвращает список товаров.
-
         :param offset: Смещение (количество пропущенных карточек) для пагинации.
         :param limit: Количество товаров для запроса (максимум — 100).
         :return: Список товаров, каждый товар представлен словарем.
@@ -57,36 +56,36 @@ class ProductProcessor:
 
 class GoogleSheetsExporter:
     def __init__(self, credentials_file: str, spreadsheet_name: str) -> None:
-        """
+        '''
         Инициализирует класс для записи данных в Google Таблицу.
 
         :param credentials_file: Путь к JSON-файлу с учетными данными Google.
         :param spreadsheet_name: Название таблицы в Google Sheets.
-        """
+        '''
         self.credentials_file = credentials_file
         self.spreadsheet_name = spreadsheet_name
         self.client = gspread.service_account(filename=self.credentials_file)
         self.sheet = self._get_or_create_spreadsheet()
 
     def _get_or_create_spreadsheet(self):
-        """
+        '''
         Проверяет существование таблицы и возвращает её, либо создает новую.
 
         :return: Объект таблицы.
-        """
+        '''
         try:
             return self.client.open(self.spreadsheet_name)
         except gspread.SpreadsheetNotFound:
             return self.client.create(self.spreadsheet_name)
 
     def export(self, data: List[Dict[str, Any]]) -> None:
-        """
+        '''
         Записывает данные в Google Таблицу. Заменяет все данные на новые.
 
         :param data: Список словарей с данными для записи.
-        """
+        '''
         # Открыть первый лист (или создать его)
-        worksheet = self.sheet.get_worksheet(0) or self.sheet.add_worksheet(title="Sheet1", rows="100", cols="20")
+        worksheet = self.sheet.get_worksheet(0) or self.sheet.add_worksheet(title='Sheet1', rows='100', cols='20')
 
         # Подготовка данных для записи (включая заголовки)
         if data:
@@ -104,7 +103,7 @@ class GoogleSheetsExporter:
 
 def main() -> None:
     '''
-    Загружает товары, обрабатывает их и сохраняет в Excel.
+    Загружает товары, обрабатывает их и сохраняет в Google Таблицу.
     '''
     # Проверка наличия необходимых переменных окружения
     assert all([WB_API_TOKEN, credentials_file, spreadsheet_name]), 'Не установлены все необходимые переменные окружения.'
